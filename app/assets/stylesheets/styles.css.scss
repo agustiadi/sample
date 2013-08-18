@@ -1,0 +1,23 @@
+/*You could change the fonts
+/$baseFontFamily: Oxygen;
+@import url(http://fonts.googleapis.com/css?family=Oxygen); */
+
+$btnPrimaryBackground: green;
+
+
+@import 'bootstrap';
+
+body {
+	padding-top: 80px;
+}
+
+@import 'bootstrap-responsive';
+
+
+.footer{
+	margin-top: 50px;
+	color: $grayLight;
+	a{
+		color:$gray;
+	}
+}
