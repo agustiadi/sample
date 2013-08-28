@@ -63,8 +63,18 @@ Sample::Application.configure do
   config.active_support.deprecation = :notify
 
   # In Production, :host should be set to the actual host of your application
-  config.action_mailer.default_url_options = { :host => 'serene-hamlet-4628.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  #Configuring Amazon S3 for Paperclip file uploads
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['Exchange-a-gram'],
+      :access_key_id => ENV['AKIAI5SZ7EMC64QXVTNQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
+  
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
